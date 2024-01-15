@@ -5,32 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script src="./javascript.js" defer></script>
   </head>
   <body>
     <h1>My book library</h1>
+    <form id="bookForm" action="">
+      <label for="title">title</label>
+      <input type="text" id="title" required />
+      <label for="author">author</label>
+      <input type="text" id="author" required />
+      <label for="pagenumber">page number</label>
+      <input class="pageNumber" type="number" id="pagenumber" required />
+      <label for="read">read</label>
+      <input type="checkbox" id="read" />
+      <button id="addBook">submit</button>
+    </form>
     <div class="bookcontainer">
       <div class="book">
-        <table>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Pages</th>
-              <th>Read</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <td>TitleData</td>
-            <td>AuthorData</td>
-            <td>PagesData</td>
-            <td>ReadData</td>
-            <td><button>Change read status</button></td>
-            <td><button>Delete</button></td>
-          </tbody>
-        </table>
+        <div>title</div>
+        <div>author</div>
+        <div>pages</div>
+        <div>read <button>toggle</button></div>
+        <button>delete</button>
       </div>
     </div>
   </body>
