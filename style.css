@@ -1,20 +1,30 @@
-.body {
-  font-family: "Times New Roman", Times, serif;
+body {
+margin:0;
+  background-color: rgb(221, 210, 210);
+  font-family: 'Schoolbell','Poppins', sans-serif; cursive;
+font-family: 'Shantell Sans','Poppins', sans-serif; cursive;
+font-family: 'Yatra One', system-ui;
+
 }
 
 #bookcontainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: auto auto auto auto;
+
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
   gap: 30px;
   margin: 4rem 12rem 4rem 12rem;
+
 }
 .book {
-  border: black solid;
+  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   height: 15rem;
+  width: 20rem;
+  border-radius: 10px;
 }
 .toggleRead {
   background-color: red;
@@ -23,8 +33,20 @@
   background-color: red;
 }
 .notRead {
-  background-color: red;
+  border: red solid 7px;
 }
 .read {
+  border: green solid 7px;
+\\
+}
+.read .toggleRead {
   background-color: green;
+}
+h1{
+  background-color: white;
+  margin: 0;
+  text-align: center;
+}
+footer{
+  background-color: white;
 }

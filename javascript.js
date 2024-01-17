@@ -5,10 +5,9 @@ const pagenumber = document.getElementById("pagenumber");
 const read = document.getElementById("read");
 const form = document.getElementById("bookForm");
 const bookcontainer = document.getElementById("bookcontainer");
-const toggleButton = document.getElementsByClassName("toggleRead");
+// const toggleButton = document.getElementsByClassName("toggleRead");
 
 const test = document.createElement("div");
-test.innerHTML = "Click me";
 AddBook.appendChild(test);
 const myLibrary = [
   {
@@ -72,8 +71,7 @@ function appendBook(book) {
   bookDiv.appendChild(authorDiv);
   bookDiv.appendChild(pagesDiv);
 
-  readDiv.textContent = `Status: ${book.read ? "finished" : "not finished"}`;
-  delDiv.appendChild(toggleButton);
+  readDiv.appendChild(toggleButton);
   delDiv.appendChild(delButton);
   bookDiv.appendChild(readDiv);
   bookDiv.appendChild(delDiv);
@@ -82,6 +80,13 @@ function appendBook(book) {
   delButton.addEventListener("click", function () {
     bookDiv.remove();
     myLibrary.splice(myLibrary.indexOf(book), 1);
+  });
+  toggleButton.addEventListener("click", () => {
+    bookDiv.classList.toggle("read");
+    bookDiv.classList.toggle("notRead");
+    toggleButton.textContent = bookDiv.classList.contains("read")
+      ? "Mark as Unread"
+      : "Mark as Read";
   });
 }
 function createBookTables() {

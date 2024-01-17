@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Shantell+Sans:ital,wght@0,400;1,700&family=Yatra+One&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
@@ -8,14 +14,19 @@
     <script src="./javascript.js" defer></script>
   </head>
   <body>
-    <h1>My book library</h1>
+    <h1>Simple book library</h1>
     <form id="bookForm" action="">
       <label for="title">title</label>
-      <input type="text" id="title" />
+      <input type="text" id="title" placeholder="Book's title" />
       <label for="author">author</label>
-      <input type="text" id="author" />
+      <input type="text" id="author" placeholder="Author" />
       <label for="pagenumber">page number</label>
-      <input class="pageNumber" type="number" id="pagenumber" />
+      <input
+        class="pageNumber"
+        type="number"
+        id="pagenumber"
+        placeholder="number of pages"
+      />
       <label for="read">read</label>
       <input type="checkbox" id="read" />
       <button id="addBook">submit</button>
