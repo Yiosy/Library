@@ -95,7 +95,9 @@ button {
   background-color: rgb(99, 94, 94);
   border-radius: 8px;
   display: none;
-  
+}
+#newBook{
+  margin-top: 10px;
 }
 .checkbox{
   display: flex;
@@ -126,8 +128,7 @@ form{
   display: flex;
   justify-content: center;
 }
-.top {
-}
+
 .top #close-button{
   position: absolute;
   top: 5px;
@@ -141,4 +142,9 @@ form{
  font-size: 16px;
  background-color: black;
  color: white;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
