@@ -16,10 +16,14 @@
   <body>
     <h1>Simple book library</h1>
     <div class="newbookcontainer">
-      <button class="newBook">+ Add book</button>
+      <button id="newBook">+ Add book</button>
     </div>
     <form id="bookForm" class="addBookForm">
-      Input information about the book
+      <div class="top">
+        <div id="close-button">X</div>
+        <!-- <div>Input information about the book</div> -->
+      </div>
+
       <label for="title"></label>
       <input type="text" id="title" placeholder="Book's title" />
       <label for="author"></label>

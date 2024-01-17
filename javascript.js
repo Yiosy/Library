@@ -5,18 +5,10 @@ const pagenumber = document.getElementById("pagenumber");
 const read = document.getElementById("read");
 const form = document.getElementById("bookForm");
 const bookcontainer = document.getElementById("bookcontainer");
-const formPopup = document.getElementsByClassName("newBook");
+const formPopup = document.getElementById("newBook");
+const Xbutton = document.getElementById("close-button");
 
-const test = document.createElement("div");
-AddBook.appendChild(test);
-const myLibrary = [
-  {
-    title: "estest",
-    author: "asdadssad",
-    pages: 242,
-    read: false,
-  },
-];
+const myLibrary = [];
 // book constructor
 function Book(title, author, pages, read) {
   this.title = title;
@@ -36,6 +28,7 @@ function addBookToLibrary() {
   } else {
     let bookNew = new Book(bookTitle, bookAuthor, bookPages, bookRead);
     myLibrary.push(bookNew);
+    form.style.display = "none";
   }
 }
 AddBook.addEventListener("click", (event) => {
@@ -100,3 +93,6 @@ function clearBooks() {
     bookcontainer.removeChild(bookcontainer.firstChild);
   }
 }
+// popup
+formPopup.addEventListener("click", () => (form.style.display = "flex"));
+Xbutton.addEventListener("click", () => (form.style.display = "none"));
