@@ -10,11 +10,8 @@ font-family: 'Yatra One', system-ui;
 #bookcontainer {
   display: grid;
   grid-template-columns: auto auto auto auto;
-
-  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
   gap: 30px;
   margin: 4rem 12rem 4rem 12rem;
-
 }
 .book {
   background-color: antiquewhite;
@@ -30,23 +27,100 @@ font-family: 'Yatra One', system-ui;
   background-color: red;
 }
 .removeBook {
-  background-color: red;
+  background-color: white;
 }
 .notRead {
   border: red solid 7px;
 }
 .read {
   border: green solid 7px;
-\\
+
 }
 .read .toggleRead {
   background-color: green;
+  
 }
 h1{
   background-color: white;
   margin: 0;
   text-align: center;
 }
-footer{
-  background-color: white;
+
+button {
+  --c:  #229091; /* the color*/
+
+  box-shadow: 0 0 0 .1em inset var(--c); 
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: 
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+  border-radius: 8px;
+}
+button:hover {
+  --_p: 100%;
+  transition: background-position .4s, background-size 0s;
+}
+button:active {
+  box-shadow: 0 0 9e9q inset #0009; 
+  background-color: var(--c);
+  color: #fff;
+}
+
+
+button {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: .1em .6em;
+  font-weight: bold;  
+  border: none;
+}
+.addBookForm{
+  position: absolute;
+  top: 40%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+  width: 20rem;
+  border: black solid;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(99, 94, 94);
+  border-radius: 8px;
+}
+.checkbox{
+  display: flex;
+  text-align: center;
+ align-items: center;
+ 
+}
+.checkbox input {
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  margin-left: 15px;
+}
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: solid 2px;
+}
+.addBookForm button {
+  width: 250px;
+  background-color: black;
+  color: white;
+}
+form{
+  font-weight: 900;
+}
+.newbookcontainer {
+  display: flex;
+  justify-content: center;
 }

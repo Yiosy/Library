@@ -5,7 +5,7 @@ const pagenumber = document.getElementById("pagenumber");
 const read = document.getElementById("read");
 const form = document.getElementById("bookForm");
 const bookcontainer = document.getElementById("bookcontainer");
-// const toggleButton = document.getElementsByClassName("toggleRead");
+const formPopup = document.getElementsByClassName("newBook");
 
 const test = document.createElement("div");
 AddBook.appendChild(test);
