@@ -5,6 +5,7 @@ const pagenumber = document.getElementById("pagenumber");
 const read = document.getElementById("read");
 const form = document.getElementById("bookForm");
 const bookcontainer = document.getElementById("bookcontainer");
+const toggleButton = document.getElementsByClassName("toggleRead");
 
 const test = document.createElement("div");
 test.innerHTML = "Click me";
@@ -30,16 +31,17 @@ function addBookToLibrary() {
   let bookAuthor = author.value;
   let bookPages = pagenumber.value;
   let bookRead = read.checked;
-  let bookNew = new Book(bookTitle, bookAuthor, bookPages, bookRead);
-  if (title.value < 1) {
-    alert("test");
+  if (!bookTitle || !bookAuthor || !bookPages) {
+    alert("Please fill in all the required fields.");
+    return;
   } else {
+    let bookNew = new Book(bookTitle, bookAuthor, bookPages, bookRead);
     myLibrary.push(bookNew);
   }
 }
-
 AddBook.addEventListener("click", (event) => {
   addBookToLibrary();
+  event.preventDefault();
   clearBooks();
   form.reset();
   createBookTables();
