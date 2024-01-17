@@ -37,6 +37,7 @@ function addBookToLibrary() {
 AddBook.addEventListener("click", (event) => {
   addBookToLibrary();
   form.reset();
+  createBookTables();
 });
 // creates div with book info
 function appendBook(book) {
@@ -45,12 +46,18 @@ function appendBook(book) {
   let authorDiv = document.createElement("div");
   let pagesDiv = document.createElement("div");
   let readDiv = document.createElement("div");
+  let delDiv = document.createElement("div");
   let toggleButton = document.createElement("button");
+  let delButton = document.createElement("button");
 
   titleDiv.textContent = "Title: " + book.title;
   authorDiv.textContent = "Author: " + book.author;
   pagesDiv.textContent = "Pages: " + book.pages;
   toggleButton.textContent = book.read ? "Mark as Unread" : "Mark as Read";
+  delButton.textContent = "delete book";
+  toggleButton.className = "toggleRead";
+  delButton.className = "removeBook";
+  bookDiv.className = `${book.read ? "read" : "notRead"}`;
 
   bookDiv.classList.add("book");
 
@@ -58,9 +65,16 @@ function appendBook(book) {
   bookDiv.appendChild(authorDiv);
   bookDiv.appendChild(pagesDiv);
 
-  readDiv.textContent = "Status: ";
-  readDiv.appendChild(toggleButton);
+  readDiv.textContent = `Status: ${book.read ? "finished" : "not finished"}`;
+  delDiv.appendChild(toggleButton);
+  delDiv.appendChild(delButton);
   bookDiv.appendChild(readDiv);
+  bookDiv.appendChild(delDiv);
 
   bookcontainer.appendChild(bookDiv);
+}
+function createBookTables() {
+  for (let i = 0; i < myLibrary.length; i++) {
+    appendBook(myLibrary[i]);
+  }
 }

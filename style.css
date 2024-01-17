@@ -7,3 +7,15 @@
   border: black solid;
   text-align: center;
 }
+.toggleRead {
+  background-color: red;
+}
+.removeBook {
+  background-color: red;
+}
+.notRead {
+  background-color: red;
+}
+.read {
+  background-color: green;
+}
