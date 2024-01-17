@@ -1,11 +1,20 @@
+.body {
+  font-family: "Times New Roman", Times, serif;
+}
+
 #bookcontainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
+  margin: 4rem 12rem 4rem 12rem;
 }
 .book {
   border: black solid;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 15rem;
 }
 .toggleRead {
   background-color: red;

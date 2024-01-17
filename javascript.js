@@ -31,11 +31,16 @@ function addBookToLibrary() {
   let bookPages = pagenumber.value;
   let bookRead = read.checked;
   let bookNew = new Book(bookTitle, bookAuthor, bookPages, bookRead);
-  myLibrary.push(bookNew);
+  if (title.value < 1) {
+    alert("test");
+  } else {
+    myLibrary.push(bookNew);
+  }
 }
 
 AddBook.addEventListener("click", (event) => {
   addBookToLibrary();
+  clearBooks();
   form.reset();
   createBookTables();
 });
@@ -72,9 +77,19 @@ function appendBook(book) {
   bookDiv.appendChild(delDiv);
 
   bookcontainer.appendChild(bookDiv);
+  delButton.addEventListener("click", function () {
+    bookDiv.remove();
+    myLibrary.splice(myLibrary.indexOf(book), 1);
+  });
 }
 function createBookTables() {
   for (let i = 0; i < myLibrary.length; i++) {
     appendBook(myLibrary[i]);
+  }
+}
+// clears dom book objects
+function clearBooks() {
+  while (bookcontainer.firstChild) {
+    bookcontainer.removeChild(bookcontainer.firstChild);
   }
 }
